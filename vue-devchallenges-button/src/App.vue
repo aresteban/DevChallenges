@@ -138,6 +138,10 @@
             </div>
         </section>
     </div>
+    <footer>
+        Created by 
+        <a href=""> Aldrin Esteban </a>
+    </footer>
 </template>
 
 <script>
@@ -156,10 +160,14 @@ export default {
     padding-top: 20px;
     display: flex;
     justify-content: space-around;
-    
+    flex-direction: column;
 }
 
 .section-buttons {
+    display: inline-block;
+
+    width: 500px;
+
     box-shadow: 0px 8px 10px rgba(51, 51, 51, 0.2);
     border-radius: 10px;
     padding: 20px 15px;
@@ -183,5 +191,24 @@ export default {
         flex-direction: column;
         margin: 5px 10px;
     }
+}
+
+footer {
+    background: #042438;
+    color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+
+    box-sizing: border-box;  
+
+    text-align: right;
+
+    a {
+        color: #ffa221;
+        text-decoration: none;
+    }
+
 }
 </style>
