@@ -55,6 +55,7 @@ button {
     border: none;
     font-family: $font;
     font-size: 14px;
+    outline: 0;
 
     &:hover,
     &:focus {
