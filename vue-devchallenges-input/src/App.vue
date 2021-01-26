@@ -18,7 +18,7 @@
         </div>
         <br>
         <div>
-            <Input id="item6" label="Label" size="sm" helperText="Look Im helping!" startIcon="add_shopping_cart" class="mr-2"/>
+            <Input id="item6" label="Label" size="sm" startIcon="add_shopping_cart" class="mr-2"/>
             <Input id="item7" label="Label" endIcon="add_shopping_cart" />
         </div>
         <br>
@@ -40,6 +40,10 @@
             <Input id="item11" label="Label"  rows="6"/>
         </div>
     </div>
+    <footer>
+        Created by 
+        <a href="https://github.com/aresteban"> Aldrin Esteban </a>
+    </footer>
 </template>
 
 <script>
@@ -51,7 +55,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 * { font-family: 'Noto Sans JP', sans-serif; }
 
 .input-container {
@@ -60,5 +64,24 @@ export default {
 
 .mr-2 {
     margin-right: 6px;
+}
+
+footer {
+    background: #042438;
+    color: #fff;
+    padding: 10px 20px;
+    // position: fixed;
+    // width: 100vw;
+    // bottom: 0;
+
+    box-sizing: border-box;  
+
+    text-align: right;
+
+    a {
+        color: #ffa221;
+        text-decoration: none;
+    }
+
 }
 </style>
