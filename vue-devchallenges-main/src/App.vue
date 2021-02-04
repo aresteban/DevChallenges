@@ -1,28 +1,27 @@
 <template>
-    <div class="bg-gray-200">
-        <img alt="Vue logo" src="./assets/logo.png" />
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="grid md:grid-cols-2 h-screen">
+        <div id="control-center" class="p-4">
+            <h2> Control Center </h2>
+
+        </div>
+        <div id="sandbox" class="bg-gray-200 p-4">
+            <h2> Sandbox </h2>
+            <Input />
+        </div>
     </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Input from '../../vue-devchallenges-input/src/components/Input.vue';
 
 export default {
     name: "App",
     components: {
-        HelloWorld,
+        Input
     },
 };
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
+
 </style>
