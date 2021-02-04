@@ -7,17 +7,20 @@
         <div id="sandbox" class="bg-gray-200 p-4">
             <h2> Sandbox </h2>
             <Input />
+            <Button/>
         </div>
     </div>
 </template>
 
 <script>
-import Input from '../../vue-devchallenges-input/src/components/Input.vue';
+import Input from './components/Input.vue';
+import Button from './components/Button.vue';
 
 export default {
     name: "App",
     components: {
-        Input
+        Input,
+        Button
     },
 };
 </script>
