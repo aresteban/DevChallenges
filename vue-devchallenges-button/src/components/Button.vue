@@ -24,7 +24,7 @@ export default {
     // Alternatively, I can add a v-bind="$attrs" if target element is not the root element.
 
     props: {
-        value: String,
+        value: {type: String, default: "Button"},
         variant: Number,
         disabled: Boolean,
         disableShadow: Boolean,
