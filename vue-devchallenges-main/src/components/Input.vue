@@ -41,7 +41,7 @@ export default {
     name: "Input",
     props: {
         id: String,
-        label: { type: String, required: true },
+        label: { type: String, default: "Input" },
         fieldType: String,
         error: Boolean,
         disabled: Boolean,
