@@ -1,7 +1,7 @@
 <template>
     <button
         :class="{
-            'variant-default': !variant && 'default',
+            'variant-default': !variant || variant == 'default',
             'variant-outline': variant == 'outline',
             'variant-text': variant == 'text',
             'shadow-disabled': disableShadow,
@@ -12,7 +12,7 @@
         }"
     >
         <i v-if="startIcon" class="material-icons">{{ startIcon }}</i>
-        {{ value }}
+        {{ value || "Button" }}
         <i v-if="endIcon" class="material-icons">{{ endIcon }}</i>
     </button>
 </template>
@@ -25,7 +25,7 @@ export default {
 
     props: {
         value: {type: String, default: "Button"},
-        variant: Number,
+        variant: String,
         disabled: Boolean,
         disableShadow: Boolean,
         startIcon: String,
@@ -43,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
+$background-white: #fff;
 $background-gray: #e0e0e0;
 $background-blue: #3d5afe;
 $background-blue-2: #2962ff1a;
@@ -73,7 +74,7 @@ i {
 }
 
 .variant-default {
-    background: $background-gray;
+    background: $background-white;
 
     &.disabled {
         box-shadow: none;

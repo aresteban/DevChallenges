@@ -29,10 +29,10 @@
         :disabled="disabled"
         :rows="rows"></textarea>
 
-        <label :for="id">{{ label }}</label>
+        <label :for="id">{{ label || 'Input' }}</label>
         <span v-if="helperText" class="helper-text">{{ helperText }}</span>
-        <i v-if="startIcon" class="material-icons start-icon" :class="{'has-helper-text': helperText}">{{ startIcon }}</i>
-        <i v-if="endIcon" class="material-icons end-icon"  :class="{'has-helper-text': helperText}"> {{ endIcon }}</i>
+        <i v-if="startIcon" class="material-icons start-icon" :class="{'has-helper-text': helperText}" v-html="materialStartIcon"></i>
+        <i v-if="endIcon" class="material-icons end-icon"  :class="{'has-helper-text': helperText}" v-html="materialEndIcon"></i>
     </div>
 </template>
 
@@ -53,7 +53,17 @@ export default {
         fullWidth: Boolean,
         rows: Number
     },
-    variant: String
+    variant: String,
+
+    computed: {
+        materialStartIcon() {
+            return this.startIcon;
+        },
+
+        materialEndIcon() {
+            return this.endIcon;
+        }
+    }
 };
 </script>
 
@@ -177,6 +187,9 @@ $red-1: #D32F2F;
     &.size-md { 
         input, textarea { padding: 12px 18px; }
     }
-    &.full-width { display: flex; }
+    &.full-width { 
+        display: flex;
+        width: 100%;
+    }
 }
 </style>
