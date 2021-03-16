@@ -9,7 +9,15 @@ module.exports = {
       'montserrat': ['Montserrat', 'sans-serif'],
       'mulish': ['Mulish', 'sans-serif']
     },
-    extend: {},
+    fontSize: {
+      '2xs': '.65rem',
+    },
+
+    extend: {
+      transitionProperty: {
+        'input-border': 'border, padding',
+      }
+    },
   },
   variants: {
     extend: {
