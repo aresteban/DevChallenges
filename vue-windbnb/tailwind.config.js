@@ -15,8 +15,21 @@ module.exports = {
 
     extend: {
       transitionProperty: {
-        'input-border': 'border, padding',
-      }
+        'input-border': 'border, padding, width',
+        'width': 'width'
+      },
+      transitionDuration: {
+        '400': '400ms'
+      },
+      // keyframes: {
+      //   hide:  {
+      //     '0%': { opacity: '100' },
+      //     '100%': { opacity: '0', display: 'none !important' },
+      //   }
+      // },
+      // animation: {
+      //   hide: 'hide 1s ease-in 1s 1 forwards'
+      // }
     },
   },
   variants: {

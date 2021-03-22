@@ -7,12 +7,17 @@
         </label>
         <input 
             type="text" 
-            class="block px-3.5  border border-transparent shadow-sm w-72 focus:outline-none rounded-xl transition-input-border ease-in focus:border-gray-500 box-border" 
-            :class="{'pt-3.5 pb-3.5': labelHide, 'pt-5 pb-1.5': !labelHide}"
+            class="block px-3.5  border border-transparent shadow-sm focus:outline-none transition-input-border linear duration-700 focus:border-gray-500 box-border"
+            :class="{
+                'pt-3.5 pb-3.5': labelHide, 
+                'pt-5 pb-1.5': !labelHide
+            }"
             v-bind="$attrs"
             :id="componentId" 
             :placeholder="placeholder" 
             :value="modelValue"
+            @focus='$emit("focused", true)'
+            @blur='$emit("focused", false)'
             @input='$emit("update:modelValue", $event.target.value)'
         />
     </div>
@@ -22,6 +27,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export default {
+    name: "TextInput",
+
     props: {
         label: {
             type: String,
@@ -33,7 +40,9 @@ export default {
         modelValue: String,
     },
 
-    emits: ['update:modelValue'],
+    emits: ['update:modelValue', 'focused'],
+
+    inheritAttrs: false,
 
     created() {
         let uuid = '';
@@ -45,14 +54,21 @@ export default {
         return {
             componentId: '',
             inputActive: false,
+            defaultClasses: ''
         }
     },
 
     mounted() {
+        console.log('Attrs', this.$attrs.class );
     },
 
-    method: { }
+    method: { },
 
-
+    computed: { }
 }
 </script>
+
+<style lang="sass" scoped>
+
+    
+</style>
