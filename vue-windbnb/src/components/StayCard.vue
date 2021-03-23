@@ -14,11 +14,11 @@
       <div class="flex justify-between text-sm text-gray-500">
         <div>
           <div 
-            class="inline-block px-2 pt-2 pb-1.5 font-bold leading-4 text-gray-600 border border-gray-600 rounded-xl"
-            v-if="stayData" >
+            class="inline-block px-2 pt-2 pb-1.5 font-bold leading-4 text-gray-600 border border-gray-600 rounded-xl mr-3"
+            v-if="stayData.superHost" >
             SUPER HOST
           </div>
-          <div class="inline-block ml-3 py-1.5">
+          <div class="inline-block py-1.5">
             {{ stayData.type }} . {{ stayData.beds }} beds
           </div>
         </div>
