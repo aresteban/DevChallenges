@@ -19,7 +19,10 @@
             SUPER HOST
           </div>
           <div class="inline-block py-1.5">
-            {{ stayData.type }} . {{ stayData.beds }} beds
+            {{ stayData.type }} 
+            <span v-if="stayData.beds">
+              . {{ stayData.beds }} beds
+            </span>
           </div>
         </div>
 
